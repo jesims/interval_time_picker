@@ -727,6 +727,7 @@ class _RenderInputPadding extends RenderShiftedBox {
 
   Size get minSize => _minSize;
   Size _minSize;
+
   set minSize(Size value) {
     if (_minSize == value) {
       return;
@@ -987,7 +988,9 @@ class _DialState extends State<_Dial> with SingleTickerProviderStateMixin {
     _theta = _thetaController
         .drive(CurveTween(curve: standardEasing))
         .drive(_thetaTween)
-      ..addListener(() => setState(() {/* _theta.value has changed */}));
+      ..addListener(() => setState(() {
+            /* _theta.value has changed */
+          }));
   }
 
   late ThemeData themeData;
